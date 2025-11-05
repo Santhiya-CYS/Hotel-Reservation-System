@@ -27,27 +27,197 @@
     </p>
     
     <form id="bookingForm">
-      <div class="form-group">
-        <label>Check-in Date</label>
-        <input type="date" required />
+      <!-- Guest Information Section -->
+      <div style="margin-bottom: 30px;">
+        <h3 style="color: #08d9d6; font-size: 1.3em; margin-bottom: 20px;">👤 Guest Information</h3>
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" id="guestName" placeholder="Enter your full name" required />
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" id="guestEmail" placeholder="your.email@example.com" required />
+        </div>
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" id="guestPhone" placeholder="+91 XXXXX XXXXX" pattern="[0-9+\s-]+" required />
+        </div>
+        <div class="form-group">
+          <label>Country/Region</label>
+          <select id="guestCountry">
+            <option value="">Select Country</option>
+            <option value="India">India</option>
+            <option value="USA">United States</option>
+            <option value="UK">United Kingdom</option>
+            <option value="Canada">Canada</option>
+            <option value="Australia">Australia</option>
+            <option value="Germany">Germany</option>
+            <option value="France">France</option>
+            <option value="Japan">Japan</option>
+            <option value="Singapore">Singapore</option>
+            <option value="UAE">United Arab Emirates</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
       </div>
-      <div class="form-group">
-        <label>Check-out Date</label>
-        <input type="date" required />
+
+      <!-- Booking Details Section -->
+      <div style="margin-bottom: 30px;">
+        <h3 style="color: #08d9d6; font-size: 1.3em; margin-bottom: 20px;">📅 Booking Details</h3>
+        <div class="form-group">
+          <label>Check-in Date *</label>
+          <input type="date" id="checkinDate" required />
+        </div>
+        <div class="form-group">
+          <label>Check-out Date *</label>
+          <input type="date" id="checkoutDate" required />
+        </div>
+        <div class="form-group">
+          <label>Number of Rooms *</label>
+          <input type="number" id="numRooms" min="1" max="10" value="1" required />
+        </div>
+        <div class="form-group">
+          <label>Room Type *</label>
+          <select id="roomType" required>
+            <option value="">Select Room Type</option>
+            <option value="standard">Standard Room - ₹2,500/night</option>
+            <option value="deluxe">Deluxe Room - ₹4,000/night</option>
+            <option value="suite">Executive Suite - ₹6,500/night</option>
+            <option value="family">Family Room - ₹5,000/night</option>
+            <option value="presidential">Presidential Suite - ₹12,000/night</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Number of Guests *</label>
+          <input type="number" id="numGuests" min="1" max="10" value="1" required />
+        </div>
+        <div class="form-group">
+          <label>Number of Children (0-12 years)</label>
+          <input type="number" id="numChildren" min="0" max="5" value="0" />
+        </div>
       </div>
-      <div class="form-group">
-        <label>Room Type</label>
-        <select required>
-          <option>Standard</option>
-          <option>Deluxe</option>
-          <option>Suite</option>
-        </select>
+
+      <!-- Preferences Section -->
+      <div style="margin-bottom: 30px;">
+        <h3 style="color: #08d9d6; font-size: 1.3em; margin-bottom: 20px;">⚙️ Preferences</h3>
+        <div class="form-group">
+          <label>Bed Preference</label>
+          <select id="bedPreference">
+            <option value="">No Preference</option>
+            <option value="single">Single Bed</option>
+            <option value="double">Double Bed</option>
+            <option value="twin">Twin Beds</option>
+            <option value="king">King Size Bed</option>
+            <option value="queen">Queen Size Bed</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Floor Preference</label>
+          <select id="floorPreference">
+            <option value="">No Preference</option>
+            <option value="ground">Ground Floor</option>
+            <option value="low">Low Floor (1-3)</option>
+            <option value="mid">Mid Floor (4-7)</option>
+            <option value="high">High Floor (8+)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>View Preference</label>
+          <select id="viewPreference">
+            <option value="">No Preference</option>
+            <option value="city">City View</option>
+            <option value="sea">Sea View</option>
+            <option value="garden">Garden View</option>
+            <option value="pool">Pool View</option>
+            <option value="mountain">Mountain View</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Smoking Preference</label>
+          <select id="smokingPreference">
+            <option value="non-smoking">Non-Smoking Room</option>
+            <option value="smoking">Smoking Room</option>
+          </select>
+        </div>
       </div>
-      <div class="form-group">
-        <label>Guests</label>
-        <input type="number" min="1" max="6" value="1" required />
+
+      <!-- Additional Services Section -->
+      <div style="margin-bottom: 30px;">
+        <h3 style="color: #08d9d6; font-size: 1.3em; margin-bottom: 20px;">🎯 Additional Services</h3>
+        <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
+          <input type="checkbox" id="airportPickup" style="width: auto; margin: 0;" />
+          <label for="airportPickup" style="margin: 0; cursor: pointer;">Airport Pickup Service (+₹1,500)</label>
+        </div>
+        <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
+          <input type="checkbox" id="breakfast" style="width: auto; margin: 0;" />
+          <label for="breakfast" style="margin: 0; cursor: pointer;">Complimentary Breakfast (+₹500/person/day)</label>
+        </div>
+        <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
+          <input type="checkbox" id="wifi" style="width: auto; margin: 0;" />
+          <label for="wifi" style="margin: 0; cursor: pointer;">Premium WiFi (+₹300/day)</label>
+        </div>
+        <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
+          <input type="checkbox" id="parking" style="width: auto; margin: 0;" />
+          <label for="parking" style="margin: 0; cursor: pointer;">Parking Space (+₹200/day)</label>
+        </div>
+        <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
+          <input type="checkbox" id="spa" style="width: auto; margin: 0;" />
+          <label for="spa" style="margin: 0; cursor: pointer;">Spa & Wellness Package (+₹2,000)</label>
+        </div>
       </div>
-      <button type="submit" class="btn">Check Availability</button>
+
+      <!-- Special Requests Section -->
+      <div style="margin-bottom: 30px;">
+        <h3 style="color: #08d9d6; font-size: 1.3em; margin-bottom: 20px;">📝 Special Requests</h3>
+        <div class="form-group">
+          <label>Purpose of Visit</label>
+          <select id="visitPurpose">
+            <option value="">Select Purpose</option>
+            <option value="leisure">Leisure/Holiday</option>
+            <option value="business">Business Trip</option>
+            <option value="wedding">Wedding</option>
+            <option value="conference">Conference/Event</option>
+            <option value="honeymoon">Honeymoon</option>
+            <option value="family">Family Vacation</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Estimated Arrival Time</label>
+          <input type="time" id="arrivalTime" />
+        </div>
+        <div class="form-group">
+          <label>Special Requests or Comments</label>
+          <textarea id="specialRequests" rows="4" placeholder="Let us know if you have any special requirements, dietary restrictions, accessibility needs, celebration arrangements, etc."></textarea>
+        </div>
+      </div>
+
+      <!-- Payment Method Section -->
+      <div style="margin-bottom: 30px;">
+        <h3 style="color: #08d9d6; font-size: 1.3em; margin-bottom: 20px;">💳 Payment Method</h3>
+        <div class="form-group">
+          <label>Preferred Payment Method *</label>
+          <select id="paymentMethod" required>
+            <option value="">Select Payment Method</option>
+            <option value="credit">Credit Card</option>
+            <option value="debit">Debit Card</option>
+            <option value="upi">UPI Payment</option>
+            <option value="netbanking">Net Banking</option>
+            <option value="payathotel">Pay at Hotel</option>
+            <option value="wallet">Digital Wallet</option>
+          </select>
+        </div>
+        <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
+          <input type="checkbox" id="termsAccepted" required style="width: auto; margin: 0;" />
+          <label for="termsAccepted" style="margin: 0; cursor: pointer;">I accept the terms and conditions *</label>
+        </div>
+        <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
+          <input type="checkbox" id="newsletter" style="width: auto; margin: 0;" />
+          <label for="newsletter" style="margin: 0; cursor: pointer;">Subscribe to newsletter for exclusive offers</label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn">Check Availability & Proceed to Payment</button>
     </form>
 
     <div style="margin-top: 60px;">
