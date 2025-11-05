@@ -106,7 +106,9 @@ nav ul li a.active {
 
 .booking {
   padding: 100px 50px;
+  padding-top: 120px;
   text-align: center;
+  min-height: 80vh;
 }
 
 .booking h2 {
@@ -138,7 +140,9 @@ input, select, textarea {
 
 .features {
   padding: 100px 50px;
+  padding-top: 120px;
   text-align: center;
+  min-height: 80vh;
 }
 
 .features h2 {
@@ -168,7 +172,9 @@ input, select, textarea {
 
 .about, .contact {
   padding: 80px 50px;
+  padding-top: 120px;
   text-align: center;
+  min-height: 80vh;
 }
 
 .about h2, .contact h2 {

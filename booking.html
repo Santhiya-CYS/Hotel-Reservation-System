@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Your Stay - HotelEase</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Hotel<span>Ease</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="booking.html" class="active">Book</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="booking" class="booking">
+    <h2>Reserve Your Stay</h2>
+    <p style="max-width: 800px; margin: 0 auto 30px; font-size: 1.1em; opacity: 0.9;">
+      Find the perfect hotel for your next trip. Browse through our curated selection of premium hotels across India.
+    </p>
+    
+    <form id="bookingForm">
+      <div class="form-group">
+        <label>Check-in Date</label>
+        <input type="date" required />
+      </div>
+      <div class="form-group">
+        <label>Check-out Date</label>
+        <input type="date" required />
+      </div>
+      <div class="form-group">
+        <label>Room Type</label>
+        <select required>
+          <option>Standard</option>
+          <option>Deluxe</option>
+          <option>Suite</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Guests</label>
+        <input type="number" min="1" max="6" value="1" required />
+      </div>
+      <button type="submit" class="btn">Check Availability</button>
+    </form>
+
+    <div style="margin-top: 60px;">
+      <h3 style="color: #08d9d6; margin-bottom: 30px;">Why Book With Us?</h3>
+      <div class="cards">
+        <div class="card">
+          <h3>💰 Best Price Guarantee</h3>
+          <p>We guarantee the lowest prices on all our hotel bookings.</p>
+        </div>
+        <div class="card">
+          <h3>🔒 Secure Booking</h3>
+          <p>All transactions are encrypted and secure.</p>
+        </div>
+        <div class="card">
+          <h3>⚡ Instant Confirmation</h3>
+          <p>Get instant booking confirmation via email and SMS.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="hotelSuggestions" style="display: none; margin-top: 60px;">
+      <h3 style="color: #08d9d6; margin-bottom: 30px;">Available Hotels</h3>
+      <div id="hotelCards" class="hotel-grid"></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 HotelEase | Developed by Code Alchemists Team</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
